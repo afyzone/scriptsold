@@ -26,6 +26,11 @@ local garbage = {
     "XD";
     "time to take out the trash";
     "I'm surprised you haven't quit yet";
+    "You have the map awareness of Christopher Colombus";
+    "Youre horrible, even Noah's Ark couldnt carry you";
+    "You miss more shots than a Stormtrooper";
+    "The only thing you carry is an extra chromosome";
+    "You're so horrible, youre feeding my ego"
 
 }
 
