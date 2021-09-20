@@ -37,7 +37,7 @@ local garbage = {
 }
 
 function TrashTalk(inputObject, gameProcessedEvent)
-    if inputObject.KeyCode == Enum.KeyCode.B and gameProcessedEvent == false then        
+    if inputObject.KeyCode == Enum.KeyCode.N and gameProcessedEvent == false then        
 game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(
         garbage[math.random(1,#garbage)],
         "All"
