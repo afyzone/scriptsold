@@ -32,6 +32,7 @@ local garbage = {
     "The only thing you carry is an extra chromosome";
     "You're so horrible, you're feeding my ego";
     "Afyzone owns me";
+    "You've paid money for a game you're bad at??";
 
 }
 
