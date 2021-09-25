@@ -1,0 +1,2 @@
+afy = "Mobile"
+game:GetService("Players").LocalPlayer.Configuration.Device.Value = afy
