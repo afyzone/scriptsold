@@ -1,6 +1,6 @@
 -- // Dependencies
 _G.PRED = 0.037
-local Aiming = loadstring(game:HttpGet("https://raw.githubusercontent.com/Stefanuk12/Aiming/main/Load.lua"))()
+local Aiming = loadstring(game:HttpGet("https://raw.githubusercontent.com/Stefanuk12/Aiming/main/Module.lua"))()
 Aiming.TeamCheck(false)
 Aiming.ShowFOV = false
 Aiming.FOV = 40
