@@ -1,6 +1,6 @@
 -- // Dependencies
 _G.PRED = 0.037
-local Aiming = loadstring(game:HttpGet("https://raw.githubusercontent.com/Afyadh/Stefanuk12-dump/main/2788229376.lua"))()
+local Aiming = loadstring(game:HttpGet("https://raw.githubusercontent.com/Afyadh/ROBLOX/master/Universal/Aiming/GamePatches/2788229376.lua"))()
 Aiming.TeamCheck(false)
 Aiming.ShowFOV = false
 Aiming.FOV = 40
