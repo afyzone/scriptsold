@@ -1,4 +1,3 @@
-print'test'
 -- // Dependencies
 _G.PRED = 0.037
 local Aiming = loadstring(game:HttpGet("https://raw.githubusercontent.com/Stefanuk12/ROBLOX/master/Universal/Aiming/Module.lua"))()
