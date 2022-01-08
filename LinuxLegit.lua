@@ -80,7 +80,7 @@ mouse.KeyDown:Connect(function(key)
 end)
 
 mouse.KeyDown:Connect(function(key)
-	if key == "b" then
+	if key == "l" then
 		DaHoodSettings.Prediction = PingNumber / 1000 + _G.PRED * -1
 	end
 end)
