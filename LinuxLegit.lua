@@ -22,7 +22,7 @@ local DaHoodSettings = {
     AimLockKeybind = Enum.KeyCode.E
 }
 local Aiming = {
-	ShowCredits = true
+	ShowCredits = false
 }
 getgenv().DaHoodSettings = DaHoodSettings
 
