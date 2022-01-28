@@ -21,9 +21,6 @@ local DaHoodSettings = {
     Prediction = 0.165,
     AimLockKeybind = Enum.KeyCode.E
 }
-local Aiming = {
-	ShowCredits = false
-}
 getgenv().DaHoodSettings = DaHoodSettings
 
 -- // Overwrite to account downed
