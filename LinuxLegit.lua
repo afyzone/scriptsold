@@ -1,5 +1,5 @@
 -- // Dependencies
-_G.PRED = 0.037
+_G.PRED = 0.057
 local Aiming = loadstring(game:HttpGet("https://raw.githubusercontent.com/Stefanuk12/ROBLOX/master/Universal/Aiming/GamePatches/2788229376.lua"))()
 Aiming.TeamCheck(false)
 Aiming.ShowFOV = false
@@ -19,7 +19,7 @@ local CurrentCamera = Workspace.CurrentCamera
 local DaHoodSettings = {
     SilentAim = true,
     AimLock = false,
-    Prediction = 0.165,
+    Prediction = 0.125,
     AimLockKeybind = Enum.KeyCode.E
 }
 getgenv().DaHoodSettings = DaHoodSettings
