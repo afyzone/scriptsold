@@ -29,7 +29,7 @@ fr.TextSize = 14.000
 local function KACIO_fake_script() -- fr.LocalScript 
 	local script = Instance.new('LocalScript', fr)
 	while wait() do
-	script.Parent.Text = game:GetService("Workspace").LocalPlayer.StandardValues.BattlePower.Value
+	script.Parent.Text = game:GetService("Players").LocalPlayer.stats.BattlePower.Value
 	end
 end
 coroutine.wrap(KACIO_fake_script)()
