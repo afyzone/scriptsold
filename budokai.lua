@@ -65,7 +65,8 @@ end)
 spawn(function()
     while wait(40) do
         if game.PlaceId == 8675599791 then
-            getquest()
+            game:GetService("ReplicatedStorage").Events.NPCEvents.TalkToNPC:FireServer("Future Goku")
+            game:GetService("ReplicatedStorage").Events.NPCEvents.Interact:FireServer("Future Goku","Yes") 
         else
             game.Players.LocalPlayer.Character.Humanoid.Health = 0
         end
