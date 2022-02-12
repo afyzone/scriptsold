@@ -62,7 +62,10 @@ spawn(function()
 end)
 spawn(function()
     while wait(40) do
-        game.Players.LocalPlayer.Character.Humanoid.Health = 0
+        if game.PlaceId == 8675599791 then
+            getquest()
+        else
+            game.Players.LocalPlayer.Character.Humanoid.Health = 0
     end
 end)
 while wait() do 
