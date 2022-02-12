@@ -56,6 +56,8 @@ spawn(function()
                         game:GetService("ReplicatedStorage").Events.Nap:FireServer()
                         wait()
                         game:GetService("ReplicatedStorage").Events.Nap:FireServer()
+                        wait()
+                        game:GetService("ReplicatedStorage").Events.Nap:FireServer()
                         wait(1)
                         repeat wait() until game.Players.LocalPlayer.stats.LifeForce.Value == 100
                         if game:GetService("Workspace")[game.Players.LocalPlayer.Name].BasicValues.Resting.Value == true then
