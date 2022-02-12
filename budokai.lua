@@ -46,8 +46,8 @@ spawn(function()
                     end
                     for i,v in pairs(game.Workspace.EnemyNPCs:GetChildren()) do
                         if v:IsA("Model") and v.Name == "Vegeta" or v.Name == "Frieza" or v.Name == "Raditz" then
-                            if 
-                                    game:GetService("ReplicatedStorage").Events.FormEvents.Transform:FireServer(game:GetService("Workspace").Afyzone.BasicValues.Form.Value))
+                            if game:GetService("Workspace").Afyzone.StandardValues.TransformDrain.isFormOn.Value == false then
+                                game:GetService("ReplicatedStorage").Events.FormEvents.Transform:FireServer(game:GetService("Workspace").Afyzone.BasicValues.Form.Value))
                             end
                             game:GetService("ReplicatedStorage").Events.Movement.Dash:FireServer()
                             game:GetService("ReplicatedStorage").Events.Attacks.BasicAttack:FireServer(false,true)
