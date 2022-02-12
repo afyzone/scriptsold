@@ -63,7 +63,7 @@ spawn(function()
     end
 end)
 spawn(function()
-    while wait(40) do
+    while wait(60) do
         if game.PlaceId == 8675599791 then
             getquest()
             wait(5)
