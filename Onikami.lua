@@ -29,7 +29,7 @@ b:Button("Click to copy Discord Link!",function()
     end
 end)
 b:Label("leadmarker kinda cute",{
-    TextSize = 25; -- Self Explaining
+    TextSize = 20; -- Self Explaining
     TextColor = Color3.fromRGB(255,255,255); -- Self Explaining
     BgColor = Color3.fromRGB(69,69,69); -- Self Explaining
 })
