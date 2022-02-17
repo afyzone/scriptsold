@@ -61,7 +61,6 @@ spawn(function()
                     game.Players.LocalPlayer.Character:FindFirstChild("Humanoid"):EquipTool(game.Players.LocalPlayer.Backpack:FindFirstChild("Starter Sword"))
                     game:GetService("VirtualInputManager"):SendMouseButtonEvent(500,0, 0, true, button, 1)
                     game:GetService("VirtualInputManager"):SendMouseButtonEvent(500,0, 0, false, button, 1)
-                    end
                 end
             end)
         end
