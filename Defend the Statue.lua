@@ -3,7 +3,7 @@ local w = library:CreateWindow("Afy x Leadmarker") -- Creates the window
 local b = w:CreateFolder("Defend the Statue") -- Creates the folder(U will put here your buttons,etc)
 local Settings = {}
 
-b:Label("I, AFY, HATE FAGGOTS",{
+b:Label("HATE FAGGOTS",{
     TextSize = 25; -- Self Explaining
     TextColor = Color3.fromRGB(255,255,255); -- Self Explaining
     BgColor = Color3.fromRGB(69,69,69); -- Self Explaining
