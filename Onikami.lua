@@ -39,6 +39,8 @@ while wait() do
         pcall(function()
             for i, v in pairs(game:GetService("Workspace").LivingThings:GetChildren()) do
                 if game:GetService("Players").LocalPlayer.Quest.IsActive.Value == false then
+                    game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace").IntNpcs.MissionD.HumanoidRootPart.CFrame
+                    wait(.3)
                     game:GetService("ReplicatedStorage").Remotes.GiverQuest:FireServer("MissionDemon")
                 end
                 if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Fists") then
