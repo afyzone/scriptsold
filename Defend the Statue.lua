@@ -46,7 +46,7 @@ while wait() do
                     game:GetService("ReplicatedStorage").Events.Core.Master:FireServer("User Ready")
                 end
                 repeat wait()
-                game:GetService("Workspace")[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,0,-2)
+                game:GetService("Workspace")[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,0,2)
                 until not Settings.autofarm or v.Humanoid.Health <= 0
             end
         end)
