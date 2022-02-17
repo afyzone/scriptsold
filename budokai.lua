@@ -36,7 +36,7 @@ spawn(function()
                     wait(5)
                 else
                     if game:GetService("Players")[game.Players.LocalPlayer.Name].stats.LifeForce.Value <= 50 then
-                        for i = 1, 200 do 
+                        for i = 1, 100 do 
                             game:GetService("ReplicatedStorage").Events.Nap:FireServer()
                         end
                     end
