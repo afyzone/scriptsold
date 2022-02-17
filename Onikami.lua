@@ -1,5 +1,5 @@
 local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/AikaV3rm/UiLib/master/Lib.lua')))()
-local w = library:CreateWindow("Afy") -- Creates the window
+local w = library:CreateWindow("afy#0679") -- Creates the window
 local b = w:CreateFolder("Onikami") -- Creates the folder(U will put here your buttons,etc)
 b:Label("HATE FAGS",{
     TextSize = 25; -- Self Explaining
@@ -13,6 +13,26 @@ end)
 b:Button("Reset",function()
     game:GetService("ReplicatedStorage").Remotes.BindReset:FireServer()
 end)
+
+b:Button("Click to copy Discord Link!",function()
+    if syn.request or http_request or request or http.request then
+        local req = syn.request or http_request or request or http.request or nil
+        if req ~= nil then
+            for port=6463, 6472, 1 do
+                local inv = "http://127.0.0.1:"..tostring(port).."/rpc?v=1"
+                local http = game:GetService("HttpService")
+                local t = {cmd = "INVITE_BROWSER", args = {["code"] = "9YrrVdmfxG"}, nonce = string.lower(http:GenerateGUID(false))}
+                local post = http:JSONEncode(t)
+                req({Url = inv, Method = "POST", Body = post, Headers = {["Content-Type"] = "application/json", ["Origin"] = "https://discord.com"}})
+            end
+        end
+    end
+end)
+b:Label("leadmarker kinda cute",{
+    TextSize = 25; -- Self Explaining
+    TextColor = Color3.fromRGB(255,255,255); -- Self Explaining
+    BgColor = Color3.fromRGB(69,69,69); -- Self Explaining
+})
 
 while wait() do
     if Settings.autofarm then
