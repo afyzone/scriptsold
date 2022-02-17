@@ -2,6 +2,7 @@ local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Aika
 local w = library:CreateWindow("Afy x Leadmarker") -- Creates the window
 local b = w:CreateFolder("Defend the Statue") -- Creates the folder(U will put here your buttons,etc)
 local Settings = {}
+local CurrentSword = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("MELEE_CLIENT")
 
 b:Label("HATE FAGGOTS",{
     TextSize = 25; -- Self Explaining
@@ -58,7 +59,7 @@ spawn(function()
         if Settings.autoclick then
             pcall(function()
                 if game:GetService("Players").LocalPlayer.PlayerGui:GetChildren() then
-                    game.Players.LocalPlayer.Character:FindFirstChild("Humanoid"):EquipTool(game.Players.LocalPlayer.Backpack:FindFirstChild("Starter Sword"))
+                    game.Players.LocalPlayer.Character:FindFirstChild("Humanoid"):EquipTool(game.Players.LocalPlayer.Backpack:FindFirstChild(CurrentSword))
                     game:GetService("VirtualInputManager"):SendMouseButtonEvent(500,0, 0, true, button, 1)
                     game:GetService("VirtualInputManager"):SendMouseButtonEvent(500,0, 0, false, button, 1)
                 end
