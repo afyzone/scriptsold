@@ -35,32 +35,8 @@ spawn(function()
                     getquest()
                     wait(5)
                 else
-                    if game:GetService("Players")[game.Players.LocalPlayer.Name].stats.LifeForce.Value <= 95 then
-                        wait(5)
-                        game:GetService("ReplicatedStorage").Events.Nap:FireServer()
-                        wait()
-                        game:GetService("ReplicatedStorage").Events.Nap:FireServer()
-                        wait()
-                        game:GetService("ReplicatedStorage").Events.Nap:FireServer()
-                        wait()
-                        game:GetService("ReplicatedStorage").Events.Nap:FireServer()
-                        wait()
-                        game:GetService("ReplicatedStorage").Events.Nap:FireServer()
-                        wait()
-                        game:GetService("ReplicatedStorage").Events.Nap:FireServer()
-                        wait()
-                        game:GetService("ReplicatedStorage").Events.Nap:FireServer()
-                        wait()
-                        game:GetService("ReplicatedStorage").Events.Nap:FireServer()
-                        wait()
-                        game:GetService("ReplicatedStorage").Events.Nap:FireServer()
-                        wait()
-                        game:GetService("ReplicatedStorage").Events.Nap:FireServer()
-                        wait()
-                        game:GetService("ReplicatedStorage").Events.Nap:FireServer()
-                        wait(1)
-                        repeat wait() until game.Players.LocalPlayer.stats.LifeForce.Value == 100
-                        if game:GetService("Workspace")[game.Players.LocalPlayer.Name].BasicValues.Resting.Value == true then
+                    if game:GetService("Players")[game.Players.LocalPlayer.Name].stats.LifeForce.Value <= 50 then
+                        for i = 1, 200 do 
                             game:GetService("ReplicatedStorage").Events.Nap:FireServer()
                         end
                     end
