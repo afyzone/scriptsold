@@ -58,9 +58,7 @@ spawn(function()
         if Settings.autoclick then
             pcall(function()
                 if game:GetService("Players").Afyzone.PlayerGui:GetChildren() then
-                    if not game:GetService("Players").Afyzone.PlayerGui:FindFirstChild("GunUI") then
-                        game.Players[game.Players.LocalPlayer.Name].Character.Humanoid:EquipTool(game.Players[game.Players.LocalPlayer.Name].Backpack["Starter Sword"])
-                    else
+                    game.Players.LocalPlayer.Character:FindFirstChild("Humanoid"):EquipTool(game.Players.LocalPlayer.Backpack:FindFirstChild("Starter Sword"))
                     game:GetService("VirtualInputManager"):SendMouseButtonEvent(500,0, 0, true, button, 1)
                     game:GetService("VirtualInputManager"):SendMouseButtonEvent(500,0, 0, false, button, 1)
                     end
