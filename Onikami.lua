@@ -66,7 +66,7 @@ while wait() do
     if Settings.autofarm then
         pcall(function()
             for i, v in pairs(game:GetService("Workspace").LivingThings:GetChildren()) do
-                if game:GetService("Players").LocalPlayer.leaderstats.Rank.Value == "Demon" then
+                if Rank == "Demon" or Rank == "Weak1" or Rank == "Weak2" or Rank == "WeakMed1" or Rank == "WeakMed2" or Rank == "WeakMed3" or Rank == "WeakMed4" or Rank == "Strong1" or Rank == "Strong2" or Rank == "Strong3" or Rank == "Strong4" or Rank == "Lower Moon" then
                     if game:GetService("Players").LocalPlayer.Quest.IsActive.Value == false then
                         game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace").IntNpcs.MissionD.HumanoidRootPart.CFrame
                         wait(.3)
@@ -82,7 +82,7 @@ while wait() do
                         game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,0,4)
                         until not Settings.autofarm or v.Humanoid.Health <= 0
                     end
-                elseif game:GetService("Players").LocalPlayer.leaderstats.Rank.Value == "Civilian" then
+                elseif Rank == "Civilian" then
                     if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Fists") then
                         game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack.Fists)
                     elseif game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Old Nichirin Katana") then
@@ -101,7 +101,7 @@ while wait() do
                     if game:GetService("Players").LocalPlayer.Quest.IsActive.Value == false then
                         game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace").IntNpcs.Mission.HumanoidRootPart.CFrame
                         wait(.3)
-                        game:GetService("ReplicatedStorage").Remotes.GiverQuest:FireServer("SlayerMission")
+                        game:GetService("ReplicatedStorage").Remotes.GiverQuest:FireServer("Mission")
                     end
                     if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Fists") then
                         game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack.Fists)
