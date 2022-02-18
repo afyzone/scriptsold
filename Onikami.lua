@@ -55,7 +55,7 @@ while wait() do
                         game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,0,8)
                         until not Settings.autofarm or v.Humanoid.Health <= 0
                     end
-                elseif game:GetService("Players").LocalPlayer.leaderstats.Rank.Value == "Slayer" then
+                elseif game:GetService("Players").LocalPlayer.leaderstats.Rank.Value == "Civilian" then
                     if game:GetService("Players").LocalPlayer.Quest.IsActive.Value == false then
                         game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace").IntNpcs.Mission.HumanoidRootPart.CFrame
                         wait(.3)
