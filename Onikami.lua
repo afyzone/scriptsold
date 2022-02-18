@@ -109,6 +109,7 @@ while wait() do
                     if v.Name == "Slayer" and v.Humanoid.Health > 0 then
                         repeat wait()
                         game:GetService("ReplicatedStorage").Remotes.CombatRemotes.Fists:FireServer("Release")
+                        game:GetService("ReplicatedStorage").Remotes.CombatRemotes.Katana:FireServer("Release")
                         game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.Velocity = Vector3.new(0,0,0)
                         game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,0,8)
                         until not Settings.autofarm or v.Humanoid.Health <= 0
