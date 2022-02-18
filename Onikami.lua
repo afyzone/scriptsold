@@ -1,6 +1,7 @@
 local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/AikaV3rm/UiLib/master/Lib.lua')))()
 local w = library:CreateWindow("afy#0679") -- Creates the window
 local b = w:CreateFolder("Onikami") -- Creates the folder(U will put here your buttons,etc)
+local Rank = game:GetService("Players").LocalPlayer.leaderstats.Rank.Value
 b:Label("HATE FAGS",{
     TextSize = 25; -- Self Explaining
     TextColor = Color3.fromRGB(255,255,255); -- Self Explaining
@@ -82,14 +83,12 @@ while wait() do
                         until not Settings.autofarm or v.Humanoid.Health <= 0
                     end
                 elseif game:GetService("Players").LocalPlayer.leaderstats.Rank.Value == "Civilian" then
-                    if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Nichirin Katana") then
-                        game:GetService("Players").LocalPlayer.Backpack.Fists:Destroy()
-                        game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack["Nichirin Katana"])
-                    elseif game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Old Nichirin Katana") then
-                        game:GetService("Players").LocalPlayer.Backpack.Fists:Destroy()
-                        game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack["Old Nichirin Katana"])
-                    elseif game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Fists") then
+                    if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Fists") then
                         game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack.Fists)
+                    elseif game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Old Nichirin Katana") then
+                        game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack["Old Nichirin Katana"])
+                    elseif game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Nichirin Katana") then
+                        game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack["Nichirin Katana"])
                     end
                     if v.Name == "Demon" and v.Humanoid.Health > 0 then
                         repeat wait()
@@ -98,20 +97,18 @@ while wait() do
                         game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.Velocity = Vector3.new(0,0,0)
                         game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,0,4)
                         until not Settings.autofarm or v.Humanoid.Health <= 0
-                elseif game:GetService("Players").LocalPlayer.leaderstats.Rank.Value == "Slayer" then
+                elseif Rank == "Slayer" or Rank == "Mizunoto" or Rank == "Mizunoe" or Rank == "Kanoto" or Rank == "Kanoe" or Rank == "Tsuchinotos" or Rank == "Tsuchinoe" or Rank == "Hinoto" or Rank == "Hinoe" or Rank == "Kinoto" or Rank == "Kinoe" or Rank == "PseudoHashira" then
                     if game:GetService("Players").LocalPlayer.Quest.IsActive.Value == false then
                         game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace").IntNpcs.Mission.HumanoidRootPart.CFrame
                         wait(.3)
-                        game:GetService("ReplicatedStorage").Remotes.GiverQuest:FireServer("Mission")
+                        game:GetService("ReplicatedStorage").Remotes.GiverQuest:FireServer("SlayerMission")
                     end
-                    if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Nichirin Katana") then
-                        game:GetService("Players").LocalPlayer.Backpack.Fists:Destroy()
-                        game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack["Nichirin Katana"])
-                    elseif game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Old Nichirin Katana") then
-                        game:GetService("Players").LocalPlayer.Backpack.Fists:Destroy()
-                        game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack["Old Nichirin Katana"])
-                    elseif game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Fists") then
+                    if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Fists") then
                         game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack.Fists)
+                    elseif game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Old Nichirin Katana") then
+                        game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack["Old Nichirin Katana"])
+                    elseif game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Nichirin Katana") then
+                        game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack["Nichirin Katana"])
                     end
                     if v.Name == "Demon" and v.Humanoid.Health > 0 then
                         repeat wait()
