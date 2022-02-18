@@ -8,7 +8,6 @@ b:Label("HATE FAGS",{
     BgColor = Color3.fromRGB(69,69,69); -- Self Explaining
 })
 local Settings = {}
-local weaponlist = {}
 
 b:Toggle("Auto Farm",function(bool)
     Settings.autofarm = bool
@@ -95,7 +94,7 @@ while wait() do
                         repeat wait()
                         game:GetService("ReplicatedStorage").Remotes.CombatRemotes.Fists:FireServer("Release")
                         game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.Velocity = Vector3.new(0,0,0)
-                        game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,0,4)
+                        game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,0,8)
                         until not Settings.autofarm or v.Humanoid.Health <= 0
                     end
                 elseif Rankings == "Civilian" then
@@ -113,7 +112,7 @@ while wait() do
                         game:GetService("ReplicatedStorage").Remotes.CombatRemotes.Fists:FireServer("Release")
                         game:GetService("ReplicatedStorage").Remotes.CombatRemotes.Katana:FireServer("Release")
                         game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.Velocity = Vector3.new(0,0,0)
-                        game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,0,4)
+                        game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,0,8)
                         until not Settings.autofarm or v.Humanoid.Health <= 0
                     end
                 elseif Rankings == "Slayer" or Rankings == "Mizunoto" or Rankings == "Mizunoe" or Rankings == "Kanoto" or Rankings == "Kanoe" or Rankings == "Tsuchinotos" or Rankings == "Tsuchinoe" or Rankings == "Hinoto" or Rankings == "Hinoe" or Rankings == "Kinoto" or Rankings == "Kinoe" or Rankings == "PseudoHashira" then
@@ -136,7 +135,7 @@ while wait() do
                         game:GetService("ReplicatedStorage").Remotes.CombatRemotes.Fists:FireServer("Release")
                         game:GetService("ReplicatedStorage").Remotes.CombatRemotes.Katana:FireServer("Release")
                         game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.Velocity = Vector3.new(0,0,0)
-                        game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,0,4)
+                        game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,0,8)
                         until not Settings.autofarm or v.Humanoid.Health <= 0
                     end
                 end
