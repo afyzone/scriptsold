@@ -82,12 +82,16 @@ while wait() do
                         until not Settings.autofarm or v.Humanoid.Health <= 0
                     end
                 elseif game:GetService("Players").LocalPlayer.leaderstats.Rank.Value == "Civilian" then
-                    if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Fists") then
+                    if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Old Nichirin Katana") then
+                        game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack["Old Nichirin Katana"])
+                    elseif game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Fists") and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Old Nichirin Katana") then
+                        wait(2)
                         game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack.Fists)
                     end
                     if v.Name == "Demon" and v.Humanoid.Health > 0 then
                         repeat wait()
                         game:GetService("ReplicatedStorage").Remotes.CombatRemotes.Fists:FireServer("Release")
+                        game:GetService("ReplicatedStorage").Remotes.CombatRemotes.Katana:FireServer("Release")
                         game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.Velocity = Vector3.new(0,0,0)
                         game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,0,4)
                         until not Settings.autofarm or v.Humanoid.Health <= 0
@@ -97,7 +101,10 @@ while wait() do
                         wait(.3)
                         game:GetService("ReplicatedStorage").Remotes.GiverQuest:FireServer("Mission")
                     end
-                    if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Fists") then
+                    if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Old Nichirin Katana") then
+                        game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack["Old Nichirin Katana"])
+                    elseif game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Fists") and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Old Nichirin Katana") then
+                        wait(2)
                         game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack.Fists)
                     end
                     if v.Name == "Demon" and v.Humanoid.Health > 0 then
