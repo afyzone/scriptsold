@@ -12,6 +12,22 @@ local Settings = {}
 b:Toggle("Auto Farm",function(bool)
     Settings.autofarm = bool
 end)
+b:Toggle("Auto Yen Farm",function(bool)
+    Settings.YenFarm = bool
+end)
+spawn(function()
+    while wait() do
+        if Settings.YenFarm then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1122.8292236328125, 212.28228759765625, -1751.1221923828125)
+            game:GetService("ReplicatedStorage").Remotes.GiverQuest:FireServer("LetterQuestGuy")
+            task.wait(.2)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(265.4073791503906, 252.47171020507812, -2272.247802734375)
+            game:GetService("ReplicatedStorage").Remotes.GiverQuest:FireServer("LetterQuest")
+            task.wait(.2)
+        end
+    end
+end)
+
 b:Button("Infinite Breathing",function()
     while wait() do
         game:GetService("ReplicatedStorage").Remotes.StartBreathing:FireServer()
