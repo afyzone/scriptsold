@@ -46,7 +46,12 @@ b:Button("Final Selection Start",function()
     game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace").IntNpcs.FSEnterHead.Head.CFrame
 end)
 
-b:Label("LeadMarker kinda cute",{
+b:Label("LeadMarker kinda cute,",{
+    TextSize = 20; -- Self Explaining
+    TextColor = Color3.fromRGB(255,255,255); -- Self Explaining
+    BgColor = Color3.fromRGB(69,69,69); -- Self Explaining
+})
+b:Label("AriRemel got cute balls.",{
     TextSize = 20; -- Self Explaining
     TextColor = Color3.fromRGB(255,255,255); -- Self Explaining
     BgColor = Color3.fromRGB(69,69,69); -- Self Explaining
