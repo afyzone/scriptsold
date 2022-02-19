@@ -11,6 +11,7 @@ if syn.request or http_request or request or http.request then
         end
     end
 end
+wait(5)
 local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/AikaV3rm/UiLib/master/Lib.lua')))()
 local w = library:CreateWindow("afy#0679") -- Creates the window
 local b = w:CreateFolder("Rebirth Champions X") -- Creates the folder(U will put here your buttons,etc)
