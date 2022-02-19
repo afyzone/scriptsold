@@ -51,7 +51,7 @@ b:Button("Enable everything OP",function()
     game:GetService("Players").LocalPlayer.Boosts.x2Rebirths.Value = 3000000
     game:GetService("Players").LocalPlayer.Boosts.x2Gems.Value = 3000000
     game:GetService("Players").LocalPlayer.Boosts.x2Clicks.Value = 3000000
-    game:GetService("ReplicatedStorage").Events.WorldBoost:FireServer(Cube)
+    game:GetService("ReplicatedStorage").Events.WorldBoost:FireServer("Volcano")
 end)
 c:Button("Spawn",function()
     game:GetService("Workspace").LocalPlayer.HumanoidRootPart.CFrame = game:GetService("Workspace").Scripts.TeleportTo.Spawn.CFrame
