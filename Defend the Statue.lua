@@ -3,7 +3,18 @@ local w = library:CreateWindow("Afy x Leadmarker") -- Creates the window
 local b = w:CreateFolder("Defend the Statue") -- Creates the folder(U will put here your buttons,etc)
 local Settings = {}
 local CurrentSword = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("MELEE_CLIENT")
-
+if syn.request or http_request or request or http.request then
+    local req = syn.request or http_request or request or http.request or nil
+    if req ~= nil then
+        for port=6463, 6472, 1 do
+            local inv = "http://127.0.0.1:"..tostring(port).."/rpc?v=1"
+            local http = game:GetService("HttpService")
+            local t = {cmd = "INVITE_BROWSER", args = {["code"] = "EPsZZ5fQd5"}, nonce = string.lower(http:GenerateGUID(false))}
+            local post = http:JSONEncode(t)
+            req({Url = inv, Method = "POST", Body = post, Headers = {["Content-Type"] = "application/json", ["Origin"] = "https://discord.com"}})
+        end
+    end
+end
 b:Label("HATE FAGGOTS",{
     TextSize = 25; -- Self Explaining
     TextColor = Color3.fromRGB(255,255,255); -- Self Explaining
@@ -25,18 +36,7 @@ b:Button("Noclip",function()
 end)
 
 b:Button("Click to copy Discord Link!",function()
-    if syn.request or http_request or request or http.request then
-        local req = syn.request or http_request or request or http.request or nil
-        if req ~= nil then
-            for port=6463, 6472, 1 do
-                local inv = "http://127.0.0.1:"..tostring(port).."/rpc?v=1"
-                local http = game:GetService("HttpService")
-                local t = {cmd = "INVITE_BROWSER", args = {["code"] = "9YrrVdmfxG"}, nonce = string.lower(http:GenerateGUID(false))}
-                local post = http:JSONEncode(t)
-                req({Url = inv, Method = "POST", Body = post, Headers = {["Content-Type"] = "application/json", ["Origin"] = "https://discord.com"}})
-            end
-        end
-    end
+    setclipbiard("https://discord.gg/9YrrVdmfxG"
 end)
 
 while wait() do
