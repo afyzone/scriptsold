@@ -11,7 +11,7 @@ b:Label("HATE FAGS",{
 local Settings = {}
 
 b:Slider("NPC Height",{
-    min = 15; -- min value of the slider
+    min = 0; -- min value of the slider
     max = -15; -- max value of the slider
     precise = false; -- max 2 decimals
 },function(value)
@@ -176,7 +176,7 @@ while wait() do
                         game:GetService("ReplicatedStorage").Remotes.CombatRemotes.Fists:FireServer("Release")
                         game:GetService("ReplicatedStorage").Remotes.CombatRemotes.Katana:FireServer("Release")
                         game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.Velocity = Vector3.new(0,0,0)
-                        game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,(heightnpc),4) * CFrame.Angles(math.rad(90),0,0)
+                        game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,(heightnpc),4)
                         game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame * CFrame.Angles(math.rad(90),0,0)
                         until not Settings.autofarm or v.Humanoid.Health <= 0
                     end
