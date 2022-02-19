@@ -8,8 +8,10 @@ b:Label("HATE FAGS",{
     TextColor = Color3.fromRGB(255, 255, 255); -- Self Explaining
     BgColor = Color3.fromRGB(0, 0, 0); -- Self Explaining
 })
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Afyadh/Kronos-Hub/main/startload.lua"))()
-wait(5)
+pcall(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Afyadh/Kronos-Hub/main/startload.lua"))()
+end)
+wait(2)
 local Settings = {}
 
 b:Slider("NPC Height",{
