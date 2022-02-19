@@ -46,28 +46,28 @@ b:Button("Enable everything OP",function()
     game:GetService("ReplicatedStorage").Events.WorldBoost:FireServer("Volcano")
 end)
 c:Button("Spawn",function()
-    game:GetService("Workspace").LocalPlayer.HumanoidRootPart.CFrame = game:GetService("Workspace").Scripts.TeleportTo.Spawn.CFrame
+    game:GetService("Workspace")[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace").Scripts.TeleportTo.Spawn.CFrame
 end)
 c:Button("Forest",function()
-    game:GetService("Workspace").LocalPlayer.HumanoidRootPart.CFrame = game:GetService("Workspace").Scripts.TeleportTo.Forest.CFrame
+    game:GetService("Workspace")[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace").Scripts.TeleportTo.Forest.CFrame
 end)
 c:Button("Beach",function()
-    game:GetService("Workspace").LocalPlayer.HumanoidRootPart.CFrame = game:GetService("Workspace").Scripts.TeleportTo.Beach.CFrame
+    game:GetService("Workspace")[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace").Scripts.TeleportTo.Beach.CFrame
 end)
 c:Button("Atlantis",function()
-    game:GetService("Workspace").LocalPlayer.HumanoidRootPart.CFrame = game:GetService("Workspace").Scripts.TeleportTo.Atlantis.CFrame
+    game:GetService("Workspace")[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace").Scripts.TeleportTo.Atlantis.CFrame
 end)
 c:Button("Desert",function()
-    game:GetService("Workspace").LocalPlayer.HumanoidRootPart.CFrame = game:GetService("Workspace").Scripts.TeleportTo.Desert.CFrame
+    game:GetService("Workspace")[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace").Scripts.TeleportTo.Desert.CFrame
 end)
 c:Button("Winter",function()
-    game:GetService("Workspace").LocalPlayer.HumanoidRootPart.CFrame = game:GetService("Workspace").Scripts.TeleportTo.Winter.CFrame
+    game:GetService("Workspace")[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace").Scripts.TeleportTo.Winter.CFrame
 end)
 c:Button("Volcano",function()
-    game:GetService("Workspace").LocalPlayer.HumanoidRootPart.CFrame = game:GetService("Workspace").Scripts.TeleportTo.Volcano.CFrame
+    game:GetService("Workspace")[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace").Scripts.TeleportTo.Volcano.CFrame
 end)
 c:Button("Cube",function()
-    game:GetService("Workspace").LocalPlayer.HumanoidRootPart.CFrame = game:GetService("Workspace").Scripts.TeleportTo.Cube.CFrame
+    game:GetService("Workspace")[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace").Scripts.TeleportTo.Cube.CFrame
 end)
 b:Label("afy on top!",{
     TextSize = 25; -- Self Explaining
