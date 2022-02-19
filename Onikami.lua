@@ -20,6 +20,7 @@ local req = syn.request or http_request or request or http.request or nil
         end
     end
 end
+wait(5)
 local Settings = {}
 
 b:Slider("NPC Height",{
