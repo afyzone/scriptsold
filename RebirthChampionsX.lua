@@ -1,13 +1,4 @@
 --https://www.roblox.com/games/8540346411/RELEASE-Rebirth-Champions-X
-local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/AikaV3rm/UiLib/master/Lib.lua')))()
-local w = library:CreateWindow("afy#0679") -- Creates the window
-local b = w:CreateFolder("Rebirth Champions X") -- Creates the folder(U will put here your buttons,etc)
-local c = w:CreateFolder("Teleports") -- Creates the folder(U will put here your buttons,etc)
-b:Label("HATE TRANNIES",{
-    TextSize = 25; -- Self Explaining
-    TextColor = Color3.fromRGB(255, 255, 255); -- Self Explaining
-    BgColor = Color3.fromRGB(0, 0, 0); -- Self Explaining
-})
 if syn.request or http_request or request or http.request then
     local req = syn.request or http_request or request or http.request or nil
     if req ~= nil then
@@ -20,6 +11,15 @@ if syn.request or http_request or request or http.request then
         end
     end
 end
+local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/AikaV3rm/UiLib/master/Lib.lua')))()
+local w = library:CreateWindow("afy#0679") -- Creates the window
+local b = w:CreateFolder("Rebirth Champions X") -- Creates the folder(U will put here your buttons,etc)
+local c = w:CreateFolder("Teleports") -- Creates the folder(U will put here your buttons,etc)
+b:Label("HATE TRANNIES",{
+    TextSize = 25; -- Self Explaining
+    TextColor = Color3.fromRGB(255, 255, 255); -- Self Explaining
+    BgColor = Color3.fromRGB(0, 0, 0); -- Self Explaining
+})
 b:Button("Enable everything OP",function()
     game:GetService("Players").LocalPlayer.Upgrades.ClickMultiplier.Value = 1.e+99
     game:GetService("Players").LocalPlayer.Upgrades.FreeAutoClicker.Value = 1
