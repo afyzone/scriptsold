@@ -1,6 +1,8 @@
 --https://www.roblox.com/games/8540346411/RELEASE-Rebirth-Champions-X
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Afyadh/Kronos-Hub/main/startload.lua"))()
-wait(5)
+pcall(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Afyadh/Kronos-Hub/main/startload.lua"))()
+end)
+wait(2)
 local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/AikaV3rm/UiLib/master/Lib.lua')))()
 local w = library:CreateWindow("afy#0679") -- Creates the window
 local b = w:CreateFolder("Rebirth Champions X") -- Creates the folder(U will put here your buttons,etc)
