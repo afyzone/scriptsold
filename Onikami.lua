@@ -2,6 +2,7 @@ local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Aika
 local w = library:CreateWindow("afy#0679") -- Creates the window
 local b = w:CreateFolder("Onikami") -- Creates the folder(U will put here your buttons,etc)
 local Rankings = game:GetService("Players").LocalPlayer.leaderstats.Rank.Value
+local heightnpc = value
 b:Label("HATE FAGS",{
     TextSize = 25; -- Self Explaining
     TextColor = Color3.fromRGB(255, 255, 255); -- Self Explaining
@@ -9,6 +10,13 @@ b:Label("HATE FAGS",{
 })
 local Settings = {}
 
+b:Slider("NPC Height",{
+    min = 0; -- min value of the slider
+    max = -15; -- max value of the slider
+    precise = false; -- max 2 decimals
+},function(value)
+    heightnpc = value
+end)
 b:Toggle("Auto Farm",function(bool)
     Settings.autofarm = bool
 end)
@@ -125,7 +133,8 @@ while wait() do
                         game:GetService("ReplicatedStorage").Remotes.CombatRemotes.Fists:FireServer("Release")
                         game:GetService("ReplicatedStorage").Remotes.CombatRemotes.Sickles:FireServer("Release")
                         game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.Velocity = Vector3.new(0,0,0)
-                        game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,-4,4) * CFrame.Angles(math.rad(90),0,0)
+                        game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,(heightnpc),4)
+                        game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame * CFrame.Angles(math.rad(90),0,0)
                         until not Settings.autofarm or v.Humanoid.Health <= 0
                     end
                 elseif Rankings == "Civilian" then
@@ -143,7 +152,8 @@ while wait() do
                         game:GetService("ReplicatedStorage").Remotes.CombatRemotes.Fists:FireServer("Release")
                         game:GetService("ReplicatedStorage").Remotes.CombatRemotes.Katana:FireServer("Release")
                         game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.Velocity = Vector3.new(0,0,0)
-                        game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,-4,4) * CFrame.Angles(math.rad(90),0,0)
+                        game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,(heightnpc),4)
+                        game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame * CFrame.Angles(math.rad(90),0,0)
                         until not Settings.autofarm or v.Humanoid.Health <= 0
                     end
                 elseif Rankings == "Slayer" or Rankings == "Mizunoto" or Rankings == "Mizunoe" or Rankings == "Kanoto" or Rankings == "Kanoe" or Rankings == "Tsuchinotos" or Rankings == "Tsuchinoe" or Rankings == "Hinoto" or Rankings == "Hinoe" or Rankings == "Kinoto" or Rankings == "Kinoe" or Rankings == "PseudoHashira" then
@@ -166,7 +176,8 @@ while wait() do
                         game:GetService("ReplicatedStorage").Remotes.CombatRemotes.Fists:FireServer("Release")
                         game:GetService("ReplicatedStorage").Remotes.CombatRemotes.Katana:FireServer("Release")
                         game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.Velocity = Vector3.new(0,0,0)
-                        game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,-4,4) * CFrame.Angles(math.rad(90),0,0)
+                        game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,(heightnpc),4) * CFrame.Angles(math.rad(90),0,0)
+                        game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame * CFrame.Angles(math.rad(90),0,0)
                         until not Settings.autofarm or v.Humanoid.Health <= 0
                     end
                 end
