@@ -11,7 +11,7 @@ b:Label("HATE FAGS",{
 local Settings = {}
 
 b:Slider("NPC Height",{
-    min = 0; -- min value of the slider
+    min = 15; -- min value of the slider
     max = -15; -- max value of the slider
     precise = false; -- max 2 decimals
 },function(value)
