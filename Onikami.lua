@@ -84,14 +84,14 @@ b:Label("AriRemel got cute balls.",{
     BgColor = Color3.fromRGB(69,69,69); -- Self Explaining
 })
 b:Button("Click to copy Discord Link!",function()
-    setclipboard("https://discord.gg/9YrrVdmfxG")
+    setclipboard("https://discord.gg/EPsZZ5fQd5")
     if syn.request or http_request or request or http.request then
         local req = syn.request or http_request or request or http.request or nil
         if req ~= nil then
             for port=6463, 6472, 1 do
                 local inv = "http://127.0.0.1:"..tostring(port).."/rpc?v=1"
                 local http = game:GetService("HttpService")
-                local t = {cmd = "INVITE_BROWSER", args = {["code"] = "9YrrVdmfxG"}, nonce = string.lower(http:GenerateGUID(false))}
+                local t = {cmd = "INVITE_BROWSER", args = {["code"] = "EPsZZ5fQd5"}, nonce = string.lower(http:GenerateGUID(false))}
                 local post = http:JSONEncode(t)
                 req({Url = inv, Method = "POST", Body = post, Headers = {["Content-Type"] = "application/json", ["Origin"] = "https://discord.com"}})
             end
@@ -125,7 +125,7 @@ while wait() do
                         game:GetService("ReplicatedStorage").Remotes.CombatRemotes.Fists:FireServer("Release")
                         game:GetService("ReplicatedStorage").Remotes.CombatRemotes.Sickles:FireServer("Release")
                         game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.Velocity = Vector3.new(0,0,0)
-                        game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,-8,4) * CFrame.Angles(math.rad(90),0,0)
+                        game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,-4,4) * CFrame.Angles(math.rad(90),0,0)
                         until not Settings.autofarm or v.Humanoid.Health <= 0
                     end
                 elseif Rankings == "Civilian" then
@@ -143,7 +143,7 @@ while wait() do
                         game:GetService("ReplicatedStorage").Remotes.CombatRemotes.Fists:FireServer("Release")
                         game:GetService("ReplicatedStorage").Remotes.CombatRemotes.Katana:FireServer("Release")
                         game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.Velocity = Vector3.new(0,0,0)
-                        game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,-8,4) * CFrame.Angles(math.rad(90),0,0)
+                        game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,-4,4) * CFrame.Angles(math.rad(90),0,0)
                         until not Settings.autofarm or v.Humanoid.Health <= 0
                     end
                 elseif Rankings == "Slayer" or Rankings == "Mizunoto" or Rankings == "Mizunoe" or Rankings == "Kanoto" or Rankings == "Kanoe" or Rankings == "Tsuchinotos" or Rankings == "Tsuchinoe" or Rankings == "Hinoto" or Rankings == "Hinoe" or Rankings == "Kinoto" or Rankings == "Kinoe" or Rankings == "PseudoHashira" then
@@ -166,7 +166,7 @@ while wait() do
                         game:GetService("ReplicatedStorage").Remotes.CombatRemotes.Fists:FireServer("Release")
                         game:GetService("ReplicatedStorage").Remotes.CombatRemotes.Katana:FireServer("Release")
                         game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.Velocity = Vector3.new(0,0,0)
-                        game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,-8,4) * CFrame.Angles(math.rad(90),0,0)
+                        game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,-4,4) * CFrame.Angles(math.rad(90),0,0)
                         until not Settings.autofarm or v.Humanoid.Health <= 0
                     end
                 end
