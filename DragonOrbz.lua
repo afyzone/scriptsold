@@ -10,8 +10,10 @@ b:Label("ION LIKE LGBT",{
     TextColor = Color3.fromRGB(255,255,255); -- Self Explaining
     BgColor = Color3.fromRGB(69,69,69); -- Self Explaining
 })
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Afyadh/Kronos-Hub/main/startload.lua"))()
-wait(5)
+pcall(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Afyadh/Kronos-Hub/main/startload.lua"))()
+end)
+wait(2)
 local Settings = {}
 
 local function resetXD()
