@@ -1,16 +1,5 @@
 --https://www.roblox.com/games/8540346411/RELEASE-Rebirth-Champions-X
-if syn.request or http_request or request or http.request then
-    local req = syn.request or http_request or request or http.request or nil
-    if req ~= nil then
-        for port=6463, 6472, 1 do
-            local inv = "http://127.0.0.1:"..tostring(port).."/rpc?v=1"
-            local http = game:GetService("HttpService")
-            local t = {cmd = "INVITE_BROWSER", args = {["code"] = "EPsZZ5fQd5"}, nonce = string.lower(http:GenerateGUID(false))}
-            local post = http:JSONEncode(t)
-            req({Url = inv, Method = "POST", Body = post, Headers = {["Content-Type"] = "application/json", ["Origin"] = "https://discord.com"}})
-        end
-    end
-end
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Afyadh/Kronos-Hub/main/startload.lua"))()
 wait(5)
 local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/AikaV3rm/UiLib/master/Lib.lua')))()
 local w = library:CreateWindow("afy#0679") -- Creates the window
