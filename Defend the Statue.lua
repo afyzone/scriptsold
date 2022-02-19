@@ -15,6 +15,7 @@ if syn.request or http_request or request or http.request then
         end
     end
 end
+wait(5)
 b:Label("HATE FAGGOTS",{
     TextSize = 25; -- Self Explaining
     TextColor = Color3.fromRGB(255,255,255); -- Self Explaining
