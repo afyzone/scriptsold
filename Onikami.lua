@@ -4,14 +4,22 @@ local b = w:CreateFolder("Onikami") -- Creates the folder(U will put here your b
 local Rankings = game:GetService("Players").LocalPlayer.leaderstats.Rank.Value
 b:Label("HATE FAGS",{
     TextSize = 25; -- Self Explaining
-    TextColor = Color3.fromRGB(255,255,255); -- Self Explaining
-    BgColor = Color3.fromRGB(69,69,69); -- Self Explaining
+    TextColor = Color3.fromRGB(255, 255, 255); -- Self Explaining
+    BgColor = Color3.fromRGB(0, 0, 0); -- Self Explaining
 })
 local Settings = {}
 
 b:Toggle("Auto Farm",function(bool)
     Settings.autofarm = bool
 end)
+b:Button("Fix Character",function()
+    for i, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
+        if v:IsA("Part") then
+            v.CanCollide = not Settings.autofarm
+        end
+    end
+end)
+
 b:Toggle("Auto Yen Farm",function(bool)
     Settings.YenFarm = bool
 end)
@@ -39,8 +47,8 @@ end)
 
 b:Label("Teleports:",{
     TextSize = 20; -- Self Explaining
-    TextColor = Color3.fromRGB(255,255,255); -- Self Explaining
-    BgColor = Color3.fromRGB(69,69,69); -- Self Explaining
+    TextColor = Color3.fromRGB(255, 255, 255); -- Self Explaining
+    BgColor = Color3.fromRGB(0, 0, 0); -- Self Explaining
 })
 b:Button("WisteriaEstate",function()
     game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace").Regions.WisteriaEstate.CFrame
@@ -59,6 +67,28 @@ b:Button("District",function()
 end)
 b:Button("Final Selection Start",function()
     game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace").IntNpcs.FSEnterHead.Head.CFrame
+end)
+
+local tp_list = {
+    ['WisteriaEstate'] = game:GetService("Workspace").Regions.WisteriaEstate.CFrame,
+    ['SwordSmith'] =  game:GetService("Workspace").Regions.SwordSmith.CFrame,
+    ['Kunohe'] = game:GetService("Workspace").Regions.Kunohe.CFrame,
+    ['SlayersHQ'] = game:GetService("Workspace").Regions.SlayersHQ.CFrame,
+    ['District'] = game:GetService("Workspace").Regions.District.CFrame,
+    ['Final Selection Start'] = game:GetService("Workspace").IntNpcs.FSEnterHead.Head.CFrame,
+}
+local tp_names = {}
+for i,v in pairs(tp_list) do
+    table.insert(tp_names, i) 
+end
+
+b:Dropdown("Select TP",tp_names,true,function(v) --Replace the Dropdown name with the selected one(A,B,C)
+    Settings.chosentp = v
+end)
+
+b:Button("Teleport",function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = tp_list[Settings.chosentp]
+
 end)
 
 b:Label("LeadMarker kinda cute,",{
@@ -90,6 +120,11 @@ end)
 while wait() do
     if Settings.autofarm then
         pcall(function()
+            for i, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
+                if v:IsA("Part") then
+                    v.CanCollide = not Settings.autofarm
+                end
+            end
             for i, v in pairs(game:GetService("Workspace").LivingThings:GetChildren()) do
                 if Rankings == "Demon" or Rankings == "Weak1" or Rankings == "Weak2" or Rankings == "WeakMed1" or Rankings == "WeakMed2" or Rankings == "WeakMed3" or Rankings == "WeakMed4" or Rankings == "Strong1" or Rankings == "Strong2" or Rankings == "Strong3" or Rankings == "Strong4" or Rankings == "Lower Moon" then
                     if game:GetService("Players").LocalPlayer.Quest.IsActive.Value == false then
@@ -108,7 +143,7 @@ while wait() do
                         game:GetService("ReplicatedStorage").Remotes.CombatRemotes.Fists:FireServer("Release")
                         game:GetService("ReplicatedStorage").Remotes.CombatRemotes.Sickles:FireServer("Release")
                         game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.Velocity = Vector3.new(0,0,0)
-                        game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,0,8)
+                        game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,-12,0) * CFrame.Angles(math.rad(90),0,0)
                         until not Settings.autofarm or v.Humanoid.Health <= 0
                     end
                 elseif Rankings == "Civilian" then
@@ -126,7 +161,7 @@ while wait() do
                         game:GetService("ReplicatedStorage").Remotes.CombatRemotes.Fists:FireServer("Release")
                         game:GetService("ReplicatedStorage").Remotes.CombatRemotes.Katana:FireServer("Release")
                         game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.Velocity = Vector3.new(0,0,0)
-                        game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,0,8)
+                        game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,-12,0) * CFrame.Angles(math.rad(90),0,0)
                         until not Settings.autofarm or v.Humanoid.Health <= 0
                     end
                 elseif Rankings == "Slayer" or Rankings == "Mizunoto" or Rankings == "Mizunoe" or Rankings == "Kanoto" or Rankings == "Kanoe" or Rankings == "Tsuchinotos" or Rankings == "Tsuchinoe" or Rankings == "Hinoto" or Rankings == "Hinoe" or Rankings == "Kinoto" or Rankings == "Kinoe" or Rankings == "PseudoHashira" then
@@ -149,7 +184,7 @@ while wait() do
                         game:GetService("ReplicatedStorage").Remotes.CombatRemotes.Fists:FireServer("Release")
                         game:GetService("ReplicatedStorage").Remotes.CombatRemotes.Katana:FireServer("Release")
                         game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.Velocity = Vector3.new(0,0,0)
-                        game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,0,8)
+                        game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,-12,0) * CFrame.Angles(math.rad(90),0,0)
                         until not Settings.autofarm or v.Humanoid.Health <= 0
                     end
                 end
