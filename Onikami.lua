@@ -50,24 +50,6 @@ b:Label("Teleports:",{
     TextColor = Color3.fromRGB(255, 255, 255); -- Self Explaining
     BgColor = Color3.fromRGB(0, 0, 0); -- Self Explaining
 })
-b:Button("WisteriaEstate",function()
-    game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace").Regions.WisteriaEstate.CFrame
-end)
-b:Button("SwordSmith",function()
-    game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace").Regions.SwordSmith.CFrame
-end)
-b:Button("Kunohe",function()
-    game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace").Regions.Kunohe.CFrame
-end)
-b:Button("SlayersHQ",function()
-    game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace").Regions.SlayersHQ.CFrame
-end)
-b:Button("District",function()
-    game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace").Regions.District.CFrame
-end)
-b:Button("Final Selection Start",function()
-    game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace").IntNpcs.FSEnterHead.Head.CFrame
-end)
 
 local tp_list = {
     ['WisteriaEstate'] = game:GetService("Workspace").Regions.WisteriaEstate.CFrame,
