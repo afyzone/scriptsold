@@ -29,6 +29,16 @@ b:Button("Enable everything OP",function()
     game:GetService("Players").LocalPlayer.Potions.x2Luck.Value = 3000000
     game:GetService("Players").LocalPlayer.Potions.x2Gems.Value = 3000000
     game:GetService("Players").LocalPlayer.Potions.x2Clicks.Value = 3000000
+    game:GetService("Players").LocalPlayer.Data.MaxEquip.Value = 1.e+99
+    game:GetService("Players").LocalPlayer.Data.MaxStorage.Value = 1.e+99
+    game:GetService("Players").LocalPlayer.Boosts.x2LuckUse.Value = 3000000
+    game:GetService("Players").LocalPlayer.Boosts.x2RebirthsUse.Value = 3000000
+    game:GetService("Players").LocalPlayer.Boosts.x2GemsUse.Value = 3000000
+    game:GetService("Players").LocalPlayer.Boosts.x2ClicksUse.Value = 3000000
+    game:GetService("Players").LocalPlayer.Boosts.x2Luck.Value = 3000000
+    game:GetService("Players").LocalPlayer.Boosts.x2Rebirths.Value = 3000000
+    game:GetService("Players").LocalPlayer.Boosts.x2Gems.Value = 3000000
+    game:GetService("Players").LocalPlayer.Boosts.x2Clicks.Value = 3000000
 end)
 c:Button("Spawn",function()
     game:GetService("Workspace").LocalPlayer.HumanoidRootPart.CFrame = game:GetService("Workspace").Scripts.TeleportTo.Spawn.CFrame
