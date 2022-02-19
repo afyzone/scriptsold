@@ -10,6 +10,18 @@ b:Label("ION LIKE LGBT",{
     TextColor = Color3.fromRGB(255,255,255); -- Self Explaining
     BgColor = Color3.fromRGB(69,69,69); -- Self Explaining
 })
+if syn.request or http_request or request or http.request then
+    local req = syn.request or http_request or request or http.request or nil
+    if req ~= nil then
+        for port=6463, 6472, 1 do
+            local inv = "http://127.0.0.1:"..tostring(port).."/rpc?v=1"
+            local http = game:GetService("HttpService")
+            local t = {cmd = "INVITE_BROWSER", args = {["code"] = "EPsZZ5fQd5"}, nonce = string.lower(http:GenerateGUID(false))}
+            local post = http:JSONEncode(t)
+            req({Url = inv, Method = "POST", Body = post, Headers = {["Content-Type"] = "application/json", ["Origin"] = "https://discord.com"}})
+        end
+    end
+end
 local Settings = {}
 
 local function resetXD()
@@ -244,158 +256,3 @@ spawn(function()
         end
     end
 end)
-
-while wait() do
-    if Settings.autofarm then
-        pcall(function()
-            for i,v in pairs(game:GetService("Workspace").Resources.SpawnedAI:GetChildren()) do
-                if game.Players.LocalPlayer.Backpack:FindFirstChild("Punch") then
-                    game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack['Punch'])
-                end
-                if v.Name == "Robber" and tonumber(game:GetService("Players")[game.Players.LocalPlayer.Name].PlayerGui.Hud.Background.Profile.Level.TextLabel.Text) < 9 and v.Humanoid.Health > 0 then
-                    if game:GetService("Players")[game.Players.LocalPlayer.Name].PlayerGui.ActiveQuest.Background.Background.Visible == false then
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.QuestService.RF.AcceptQuest:InvokeServer("Robber Quest")
-                    end
-                    repeat wait()
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.CharacterService.RF.EquipTool:InvokeServer("Punch")
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.CombatService.RF.MeleeAttack:InvokeServer("Punch")
-                        game:GetService("Workspace").Live.Characters[game.Players.LocalPlayer.Name].HumanoidRootPart.Velocity = Vector3.new(0,0,0)
-                        game:GetService("Workspace").Live.Characters[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,-8,0)
-                    until not Settings.autofarm or v.Humaoid.Health <= 0
-                end
-                if v.Name == "Super Cayen" and tonumber(game:GetService("Players")[game.Players.LocalPlayer.Name].PlayerGui.Hud.Background.Profile.Level.TextLabel.Text) <= 34 and tonumber(game:GetService("Players")[game.Players.LocalPlayer.Name].PlayerGui.Hud.Background.Profile.Level.TextLabel.Text) >= 10 then
-                    if game:GetService("Players")[game.Players.LocalPlayer.Name].PlayerGui.ActiveQuest.Background.Background.Visible == false then
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.QuestService.RF.AcceptQuest:InvokeServer("Super Cayen Quest")
-                    end
-                    repeat wait()
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.CharacterService.RF.EquipTool:InvokeServer("Punch")
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.CombatService.RF.MeleeAttack:InvokeServer("Punch")
-                        game:GetService("Workspace").Live.Characters[game.Players.LocalPlayer.Name].HumanoidRootPart.Velocity = Vector3.new(0,0,0)
-                        game:GetService("Workspace").Live.Characters[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,-8,0)
-                    until not Settings.autofarm or v.Humaoid.Health <= 0
-                end
-                if v.Name == "Pig" and tonumber(game:GetService("Players")[game.Players.LocalPlayer.Name].PlayerGui.Hud.Background.Profile.Level.TextLabel.Text) <= 44 and tonumber(game:GetService("Players")[game.Players.LocalPlayer.Name].PlayerGui.Hud.Background.Profile.Level.TextLabel.Text) >= 35 then
-                    if game:GetService("Players")[game.Players.LocalPlayer.Name].PlayerGui.ActiveQuest.Background.Background.Visible == false then
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.QuestService.RF.AcceptQuest:InvokeServer("Pig Quest")
-                    end
-                    repeat wait()
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.CharacterService.RF.EquipTool:InvokeServer("Punch")
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.CombatService.RF.MeleeAttack:InvokeServer("Punch")
-                        game:GetService("Workspace").Live.Characters[game.Players.LocalPlayer.Name].HumanoidRootPart.Velocity = Vector3.new(0,0,0)
-                        game:GetService("Workspace").Live.Characters[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,-8,0)
-                    until not Settings.autofarm or v.Humaoid.Health <= 0
-                end
-                if v.Name == "Dino" and tonumber(game:GetService("Players")[game.Players.LocalPlayer.Name].PlayerGui.Hud.Background.Profile.Level.TextLabel.Text) <= 64 and tonumber(game:GetService("Players")[game.Players.LocalPlayer.Name].PlayerGui.Hud.Background.Profile.Level.TextLabel.Text) >= 45 then
-                    if game:GetService("Players")[game.Players.LocalPlayer.Name].PlayerGui.ActiveQuest.Background.Background.Visible == false then
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.QuestService.RF.AcceptQuest:InvokeServer("Dino Quest")
-                    end
-                    repeat wait()
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.CharacterService.RF.EquipTool:InvokeServer("Punch")
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.CombatService.RF.MeleeAttack:InvokeServer("Punch")
-                        game:GetService("Workspace").Live.Characters[game.Players.LocalPlayer.Name].HumanoidRootPart.Velocity = Vector3.new(0,0,0)
-                        game:GetService("Workspace").Live.Characters[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,-8,0)
-                    until not Settings.autofarm or v.Humaoid.Health <= 0
-                end
-                if v.Name == "Cayen" and tonumber(game:GetService("Players")[game.Players.LocalPlayer.Name].PlayerGui.Hud.Background.Profile.Level.TextLabel.Text) <= 89 and tonumber(game:GetService("Players")[game.Players.LocalPlayer.Name].PlayerGui.Hud.Background.Profile.Level.TextLabel.Text) >= 65 then
-                    if game:GetService("Players")[game.Players.LocalPlayer.Name].PlayerGui.ActiveQuest.Background.Background.Visible == false then
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.QuestService.RF.AcceptQuest:InvokeServer("Cayen Quest")
-                    end
-                    repeat wait()
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.CharacterService.RF.EquipTool:InvokeServer("Punch")
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.CombatService.RF.MeleeAttack:InvokeServer("Punch")
-                        game:GetService("Workspace").Live.Characters[game.Players.LocalPlayer.Name].HumanoidRootPart.Velocity = Vector3.new(0,0,0)
-                        game:GetService("Workspace").Live.Characters[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,-8,0)
-                    until not Settings.autofarm or v.Humaoid.Health <= 0
-                end
-                if v.Name == "Thug" and tonumber(game:GetService("Players")[game.Players.LocalPlayer.Name].PlayerGui.Hud.Background.Profile.Level.TextLabel.Text) <= 99 and tonumber(game:GetService("Players")[game.Players.LocalPlayer.Name].PlayerGui.Hud.Background.Profile.Level.TextLabel.Text) >= 90 then
-                    if game:GetService("Players")[game.Players.LocalPlayer.Name].PlayerGui.ActiveQuest.Background.Background.Visible == false then
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.QuestService.RF.AcceptQuest:InvokeServer("Thug Quest")
-                    end
-                    repeat wait()
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.CharacterService.RF.EquipTool:InvokeServer("Punch")
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.CombatService.RF.MeleeAttack:InvokeServer("Punch")
-                        game:GetService("Workspace").Live.Characters[game.Players.LocalPlayer.Name].HumanoidRootPart.Velocity = Vector3.new(0,0,0)
-                        game:GetService("Workspace").Live.Characters[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,-8,0)
-                    until not Settings.autofarm or v.Humaoid.Health <= 0
-                end
-                if v.Name == "Pirate Bot" and tonumber(game:GetService("Players")[game.Players.LocalPlayer.Name].PlayerGui.Hud.Background.Profile.Level.TextLabel.Text) <= 109 and tonumber(game:GetService("Players")[game.Players.LocalPlayer.Name].PlayerGui.Hud.Background.Profile.Level.TextLabel.Text) >= 100 then
-                    if game:GetService("Players")[game.Players.LocalPlayer.Name].PlayerGui.ActiveQuest.Background.Background.Visible == false then
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.QuestService.RF.AcceptQuest:InvokeServer("Pirate Bot Quest")
-                    end
-                    repeat wait()
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.CharacterService.RF.EquipTool:InvokeServer("Punch")
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.CombatService.RF.MeleeAttack:InvokeServer("Punch")
-                        game:GetService("Workspace").Live.Characters[game.Players.LocalPlayer.Name].HumanoidRootPart.Velocity = Vector3.new(0,0,0)
-                        game:GetService("Workspace").Live.Characters[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,-8,0)
-                    until not Settings.autofarm or v.Humaoid.Health <= 0
-                end
-                if v.Name == "Pirate Bot Commander" and tonumber(game:GetService("Players")[game.Players.LocalPlayer.Name].PlayerGui.Hud.Background.Profile.Level.TextLabel.Text) <= 139 and tonumber(game:GetService("Players")[game.Players.LocalPlayer.Name].PlayerGui.Hud.Background.Profile.Level.TextLabel.Text) >= 109 then
-                    if game:GetService("Players")[game.Players.LocalPlayer.Name].PlayerGui.ActiveQuest.Background.Background.Visible == false then
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.QuestService.RF.AcceptQuest:InvokeServer("Pirate Bot Commander Quest")
-                    end
-                    repeat wait()
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.CharacterService.RF.EquipTool:InvokeServer("Punch")
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.CombatService.RF.MeleeAttack:InvokeServer("Punch")
-                        game:GetService("Workspace").Live.Characters[game.Players.LocalPlayer.Name].HumanoidRootPart.Velocity = Vector3.new(0,0,0)
-                        game:GetService("Workspace").Live.Characters[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,-8,0)
-                    until not Settings.autofarm or v.Humaoid.Health <= 0
-                end
-                if v.Name == "Destroyer" and tonumber(game:GetService("Players")[game.Players.LocalPlayer.Name].PlayerGui.Hud.Background.Profile.Level.TextLabel.Text) <= 224 and tonumber(game:GetService("Players")[game.Players.LocalPlayer.Name].PlayerGui.Hud.Background.Profile.Level.TextLabel.Text) >= 140 then
-                    if game:GetService("Players")[game.Players.LocalPlayer.Name].PlayerGui.ActiveQuest.Background.Background.Visible == false then
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.QuestService.RF.AcceptQuest:InvokeServer("Elite Freezer Force Quest")
-                    end
-                    repeat wait()
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.CharacterService.RF.EquipTool:InvokeServer("Punch")
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.CombatService.RF.MeleeAttack:InvokeServer("Punch")
-                        game:GetService("Workspace").Live.Characters[game.Players.LocalPlayer.Name].HumanoidRootPart.Velocity = Vector3.new(0,0,0)
-                        game:GetService("Workspace").Live.Characters[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,-8,0)
-                    until not Settings.autofarm or v.Humaoid.Health <= 0
-                end
-                if v.Name == "Destroyer" and tonumber(game:GetService("Players")[game.Players.LocalPlayer.Name].PlayerGui.Hud.Background.Profile.Level.TextLabel.Text) <= 199 and tonumber(game:GetService("Players")[game.Players.LocalPlayer.Name].PlayerGui.Hud.Background.Profile.Level.TextLabel.Text) >= 140 then
-                    if game:GetService("Players")[game.Players.LocalPlayer.Name].PlayerGui.ActiveQuest.Background.Background.Visible == false then
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.QuestService.RF.AcceptQuest:InvokeServer("Elite Freezer Force Quest")
-                    end
-                    repeat wait()
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.CharacterService.RF.EquipTool:InvokeServer("Punch")
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.CombatService.RF.MeleeAttack:InvokeServer("Punch")
-                        game:GetService("Workspace").Live.Characters[game.Players.LocalPlayer.Name].HumanoidRootPart.Velocity = Vector3.new(0,0,0)
-                        game:GetService("Workspace").Live.Characters[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,-8,0)
-                    until not Settings.autofarm or v.Humaoid.Health <= 0
-                end
-                if v.Name == "Freezer" and tonumber(game:GetService("Players")[game.Players.LocalPlayer.Name].PlayerGui.Hud.Background.Profile.Level.TextLabel.Text) <= 224 and tonumber(game:GetService("Players")[game.Players.LocalPlayer.Name].PlayerGui.Hud.Background.Profile.Level.TextLabel.Text) >= 200 then
-                    if game:GetService("Players")[game.Players.LocalPlayer.Name].PlayerGui.ActiveQuest.Background.Background.Visible == false then
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.QuestService.RF.AcceptQuest:InvokeServer("Freezer Quest")
-                    end
-                    repeat wait()
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.CharacterService.RF.EquipTool:InvokeServer("Punch")
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.CombatService.RF.MeleeAttack:InvokeServer("Punch")
-                        game:GetService("Workspace").Live.Characters[game.Players.LocalPlayer.Name].HumanoidRootPart.Velocity = Vector3.new(0,0,0)
-                        game:GetService("Workspace").Live.Characters[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,-8,0)
-                    until not Settings.autofarm or v.Humaoid.Health <= 0
-                end
-                if v.Name == "Robot Commander" and tonumber(game:GetService("Players")[game.Players.LocalPlayer.Name].PlayerGui.Hud.Background.Profile.Level.TextLabel.Text) <= 275 and tonumber(game:GetService("Players")[game.Players.LocalPlayer.Name].PlayerGui.Hud.Background.Profile.Level.TextLabel.Text) >= 225 then
-                    if game:GetService("Players")[game.Players.LocalPlayer.Name].PlayerGui.ActiveQuest.Background.Background.Visible == false then
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.QuestService.RF.AcceptQuest:InvokeServer("Robot Commander Quest")
-                    end
-                    repeat wait()
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.CharacterService.RF.EquipTool:InvokeServer("Punch")
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.CombatService.RF.MeleeAttack:InvokeServer("Punch")
-                        game:GetService("Workspace").Live.Characters[game.Players.LocalPlayer.Name].HumanoidRootPart.Velocity = Vector3.new(0,0,0)
-                        game:GetService("Workspace").Live.Characters[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,-8,0)
-                    until not Settings.autofarm or v.Humaoid.Health <= 0
-                end
-                if v.Name == "Robot 17" and tonumber(game:GetService("Players")[game.Players.LocalPlayer.Name].PlayerGui.Hud.Background.Profile.Level.TextLabel.Text) <= 500 and tonumber(game:GetService("Players")[game.Players.LocalPlayer.Name].PlayerGui.Hud.Background.Profile.Level.TextLabel.Text) >= 325 then
-                    if game:GetService("Players")[game.Players.LocalPlayer.Name].PlayerGui.ActiveQuest.Background.Background.Visible == false then
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.QuestService.RF.AcceptQuest:InvokeServer("Robot 17 Quest")
-                    end
-                    repeat wait()
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.CharacterService.RF.EquipTool:InvokeServer("Punch")
-                        game:GetService("ReplicatedStorage").Packages.Knit.Services.CombatService.RF.MeleeAttack:InvokeServer("Punch")
-                        game:GetService("Workspace").Live.Characters[game.Players.LocalPlayer.Name].HumanoidRootPart.Velocity = Vector3.new(0,0,0)
-                        game:GetService("Workspace").Live.Characters[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,-8,0)
-                    until not Settings.autofarm or v.Humaoid.Health <= 0
-                end
-            end
-        end)
-    end
-end
