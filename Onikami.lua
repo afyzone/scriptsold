@@ -8,18 +8,7 @@ b:Label("HATE FAGS",{
     TextColor = Color3.fromRGB(255, 255, 255); -- Self Explaining
     BgColor = Color3.fromRGB(0, 0, 0); -- Self Explaining
 })
-if syn.request or http_request or request or http.request then
-local req = syn.request or http_request or request or http.request or nil
-    if req ~= nil then
-        for port=6463, 6472, 1 do
-            local inv = "http://127.0.0.1:"..tostring(port).."/rpc?v=1"
-            local http = game:GetService("HttpService")
-            local t = {cmd = "INVITE_BROWSER", args = {["code"] = "EPsZZ5fQd5"}, nonce = string.lower(http:GenerateGUID(false))}
-            local post = http:JSONEncode(t)
-            req({Url = inv, Method = "POST", Body = post, Headers = {["Content-Type"] = "application/json", ["Origin"] = "https://discord.com"}})
-        end
-    end
-end
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Afyadh/Kronos-Hub/main/startload.lua"))()
 wait(5)
 local Settings = {}
 
