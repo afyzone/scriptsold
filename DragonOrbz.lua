@@ -22,6 +22,7 @@ if syn.request or http_request or request or http.request then
         end
     end
 end
+wait(5)
 local Settings = {}
 
 local function resetXD()
