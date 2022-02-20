@@ -24,7 +24,7 @@ b:Button("Noclip",function()
 end)
 
 b:Button("Click to copy Discord Link!",function()
-    setclipbiard("https://discord.gg/9YrrVdmfxG"
+    setclipbiard("https://discord.gg/9YrrVdmfxG")
     if syn.request or http_request or request or http.request then
     local req = syn.request or http_request or request or http.request or nil
         if req ~= nil then
