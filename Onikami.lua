@@ -8,10 +8,6 @@ b:Label("HATE FAGS",{
     TextColor = Color3.fromRGB(255, 255, 255); -- Self Explaining
     BgColor = Color3.fromRGB(0, 0, 0); -- Self Explaining
 })
-pcall(function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Afyadh/Kronos-Hub/main/startload.lua"))()
-end)
-wait(2)
 local Settings = {}
 
 b:Slider("NPC Height",{
@@ -32,7 +28,7 @@ b:Button("Fix Character",function()
     end
 end)
 
-b:Toggle("Auto Yen Farm",function(bool)
+b:Toggle("Auto Yen Farm (20$)",function(bool)
     Settings.YenFarm = bool
 end)
 spawn(function()
@@ -44,6 +40,21 @@ spawn(function()
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(265.4073791503906, 252.47171020507812, -2272.247802734375)
             game:GetService("ReplicatedStorage").Remotes.GiverQuest:FireServer("LetterQuest")
             task.wait(.2)
+        end
+    end
+end)
+b:Toggle("Auto Yen Farm (50$)",function(bool)
+    Settings.BetterYenFarm = bool
+end)
+spawn(function()
+    while wait() do
+        if Settings.BetterYenFarm then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(165.214401, 253.135803, -2272.45728)
+            wait(.2)
+            game:GetService("ReplicatedStorage").Remotes.GiverQuest:FireServer("TrinketsQuest")
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1520.48352, 364.725159, -3001.07715)
+            wait(.2)
+            game:GetService("ReplicatedStorage").Remotes.GiverQuest:FireServer("TrinketsQuestGuy")
         end
     end
 end)
@@ -98,7 +109,7 @@ b:Label("AriRemel got cute balls.",{
 b:Button("Click to copy Discord Link!",function()
     setclipboard("https://discord.gg/EPsZZ5fQd5")
     if syn.request or http_request or request or http.request then
-    local req = syn.request or http_request or request or http.request or nil
+        local req = syn.request or http_request or request or http.request or nil
         if req ~= nil then
             for port=6463, 6472, 1 do
                 local inv = "http://127.0.0.1:"..tostring(port).."/rpc?v=1"
@@ -164,7 +175,7 @@ while wait() do
                     if game:GetService("Players").LocalPlayer.Quest.IsActive.Value == false then
                         game:GetService("Workspace").LivingThings[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace").IntNpcs.Mission.HumanoidRootPart.CFrame
                         wait(.3)
-                        game:GetService("ReplicatedStorage").Remotes.GiverQuest:FireServer("MissionSlayer")
+                        game:GetService("ReplicatedStorage").Remotes.GiverQuest:FireServer("SlayerMission")
                     end
                     if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Fists") then
                         game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack.Fists)
