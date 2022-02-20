@@ -1,17 +1,15 @@
 --https://www.roblox.com/games/8540346411/RELEASE-Rebirth-Champions-X
-pcall(function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Afyadh/Kronos-Hub/main/startload.lua"))()
-end)
-wait(2)
 local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/AikaV3rm/UiLib/master/Lib.lua')))()
 local w = library:CreateWindow("afy#0679") -- Creates the window
 local b = w:CreateFolder("Rebirth Champions X") -- Creates the folder(U will put here your buttons,etc)
 local c = w:CreateFolder("Teleports") -- Creates the folder(U will put here your buttons,etc)
+local currenthatching = game:GetService("Players").LocalPlayer.PlayerScripts.Library.Pets.Hatching.Current.Value
 b:Label("HATE TRANNIES",{
     TextSize = 25; -- Self Explaining
     TextColor = Color3.fromRGB(255, 255, 255); -- Self Explaining
     BgColor = Color3.fromRGB(0, 0, 0); -- Self Explaining
 })
+local Settings = {}
 b:Button("Enable everything OP",function()
     game:GetService("Players").LocalPlayer.Upgrades.ClickMultiplier.Value = 1.e+99
     game:GetService("Players").LocalPlayer.Upgrades.FreeAutoClicker.Value = 1
@@ -43,31 +41,33 @@ b:Button("Enable everything OP",function()
     game:GetService("Players").LocalPlayer.Boosts.x2Rebirths.Value = 3000000
     game:GetService("Players").LocalPlayer.Boosts.x2Gems.Value = 3000000
     game:GetService("Players").LocalPlayer.Boosts.x2Clicks.Value = 3000000
-    game:GetService("ReplicatedStorage").Events.WorldBoost:FireServer("Volcano")
+end)
+b:Toggle("Auto Hatch Current Egg",function(bool)
+    Settings.eggfarm = bool
 end)
 c:Button("Spawn",function()
-    game:GetService("Workspace")[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace").Scripts.TeleportTo.Spawn.CFrame
+    game:GetService("Workspace").LocalPlayer.HumanoidRootPart.CFrame = game:GetService("Workspace").Scripts.TeleportTo.Spawn.CFrame
 end)
 c:Button("Forest",function()
-    game:GetService("Workspace")[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace").Scripts.TeleportTo.Forest.CFrame
+    game:GetService("Workspace").LocalPlayer.HumanoidRootPart.CFrame = game:GetService("Workspace").Scripts.TeleportTo.Forest.CFrame
 end)
 c:Button("Beach",function()
-    game:GetService("Workspace")[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace").Scripts.TeleportTo.Beach.CFrame
+    game:GetService("Workspace").LocalPlayer.HumanoidRootPart.CFrame = game:GetService("Workspace").Scripts.TeleportTo.Beach.CFrame
 end)
 c:Button("Atlantis",function()
-    game:GetService("Workspace")[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace").Scripts.TeleportTo.Atlantis.CFrame
+    game:GetService("Workspace").LocalPlayer.HumanoidRootPart.CFrame = game:GetService("Workspace").Scripts.TeleportTo.Atlantis.CFrame
 end)
 c:Button("Desert",function()
-    game:GetService("Workspace")[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace").Scripts.TeleportTo.Desert.CFrame
+    game:GetService("Workspace").LocalPlayer.HumanoidRootPart.CFrame = game:GetService("Workspace").Scripts.TeleportTo.Desert.CFrame
 end)
 c:Button("Winter",function()
-    game:GetService("Workspace")[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace").Scripts.TeleportTo.Winter.CFrame
+    game:GetService("Workspace").LocalPlayer.HumanoidRootPart.CFrame = game:GetService("Workspace").Scripts.TeleportTo.Winter.CFrame
 end)
 c:Button("Volcano",function()
-    game:GetService("Workspace")[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace").Scripts.TeleportTo.Volcano.CFrame
+    game:GetService("Workspace").LocalPlayer.HumanoidRootPart.CFrame = game:GetService("Workspace").Scripts.TeleportTo.Volcano.CFrame
 end)
 c:Button("Cube",function()
-    game:GetService("Workspace")[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = game:GetService("Workspace").Scripts.TeleportTo.Cube.CFrame
+    game:GetService("Workspace").LocalPlayer.HumanoidRootPart.CFrame = game:GetService("Workspace").Scripts.TeleportTo.Cube.CFrame
 end)
 b:Label("afy on top!",{
     TextSize = 25; -- Self Explaining
@@ -77,7 +77,7 @@ b:Label("afy on top!",{
 b:Button("Click to copy Discord Link!",function()
     setclipboard("https://discord.gg/EPsZZ5fQd5")
     if syn.request or http_request or request or http.request then
-    local req = syn.request or http_request or request or http.request or nil
+        local req = syn.request or http_request or request or http.request or nil
         if req ~= nil then
             for port=6463, 6472, 1 do
                 local inv = "http://127.0.0.1:"..tostring(port).."/rpc?v=1"
@@ -89,3 +89,10 @@ b:Button("Click to copy Discord Link!",function()
         end
     end
 end)
+
+while wait() do
+    if Settings.eggfarm then
+        currenthatching = game:GetService("Players").LocalPlayer.PlayerScripts.Library.Pets.Hatching.Current.Value
+        game:GetService("ReplicatedStorage").Functions.Unbox:InvokeServer(currenthatching,"Triple")
+    end
+end
