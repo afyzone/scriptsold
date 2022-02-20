@@ -3,10 +3,6 @@ local w = library:CreateWindow("Afy x Leadmarker") -- Creates the window
 local b = w:CreateFolder("Defend the Statue") -- Creates the folder(U will put here your buttons,etc)
 local Settings = {}
 local CurrentSword = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("MELEE_CLIENT")
-pcall(function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Afyadh/Kronos-Hub/main/startload.lua"))()
-end)
-wait(2)
 b:Label("HATE FAGGOTS",{
     TextSize = 25; -- Self Explaining
     TextColor = Color3.fromRGB(255,255,255); -- Self Explaining
