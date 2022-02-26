@@ -67,7 +67,7 @@ spawn(function()
     wait(100)
 end)
 spawn(function()
-    while wait(60) do
+    while wait(120) do
         game.Players.LocalPlayer.Character.Humanoid.Health = 0
     end
 end)
